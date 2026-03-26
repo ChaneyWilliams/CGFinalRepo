@@ -2,10 +2,24 @@
 
 #include <Canis/Entity.hpp>
 
+#include <cstdint>
+#include <limits>
+#include <unordered_map>
+
+class VoxelTerrainChunk;
+
 class GenerateTerrain : public Canis::ScriptableEntity
 {
 private:
     bool m_generated = false;
+    Canis::Entity* m_playerEntity = nullptr;
+    int m_lastCenterChunkX = std::numeric_limits<int>::max();
+    int m_lastCenterChunkZ = std::numeric_limits<int>::max();
+    int m_rockMaterialId = -1;
+    int m_iceMaterialId = -1;
+    int m_goldMaterialId = -1;
+    int m_uraniumMaterialId = -1;
+    std::unordered_map<std::uint64_t, int> m_loadedChunkEntities = {};
 
 public:
     static constexpr const char* ScriptName = "GenerateTerrain";
@@ -33,6 +47,14 @@ public:
     void Ready();
     void Destroy();
     void Update(float _dt);
+
+private:
+    void CacheMaterials();
+    void EnsurePlayerEntity();
+    Canis::Vector3 GetStreamingFocusPosition() const;
+    void RefreshLoadedChunks(bool _forceRefresh);
+    Canis::Entity* CreateChunkEntity(int _chunkX, int _chunkZ);
+    void PopulateChunk(VoxelTerrainChunk &_chunk, int _chunkX, int _chunkZ) const;
 };
 
 extern void RegisterGenerateTerrainScript(Canis::App& _app);

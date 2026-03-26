@@ -7,7 +7,10 @@
 #include <Canis/ConfigHelper.hpp>
 
 #include <algorithm>
+#include <cstdint>
 #include <cmath>
+#include <string>
+#include <unordered_set>
 
 namespace
 {
@@ -124,6 +127,16 @@ namespace
         return normalization > 0.0f ? (total / normalization) : 0.0f;
     }
 
+    float Saturate(float _value)
+    {
+        return std::clamp(_value, 0.0f, 1.0f);
+    }
+
+    float RidgedNoise3D(float _x, float _y, float _z, int _seed, int _octaves)
+    {
+        return 1.0f - std::abs((FractalNoise3D(_x, _y, _z, _seed, _octaves) * 2.0f) - 1.0f);
+    }
+
     int GetTerrainHeight(const GenerateTerrain &_terrain, int _globalX, int _globalZ)
     {
         const float broad = FractalNoise2D(
@@ -140,41 +153,124 @@ namespace
         return _terrain.baseHeight + static_cast<int>(std::round(blended * static_cast<float>(_terrain.maxHeightVariation)));
     }
 
+    float GetCaveField(const GenerateTerrain &_terrain, int _globalX, int _y, int _globalZ)
+    {
+        const float scale = std::max(0.01f, _terrain.caveNoiseScale);
+        const float chamberNoise = FractalNoise3D(
+            static_cast<float>(_globalX) * scale * 0.85f,
+            static_cast<float>(_y) * scale * 0.72f,
+            static_cast<float>(_globalZ) * scale * 0.85f,
+            _terrain.seed + 401,
+            3);
+        const float tunnelNoise = RidgedNoise3D(
+            static_cast<float>(_globalX) * scale * 1.95f,
+            static_cast<float>(_y) * scale * 1.45f,
+            static_cast<float>(_globalZ) * scale * 1.95f,
+            _terrain.seed + 487,
+            2);
+
+        return Saturate((chamberNoise * 0.35f) + (tunnelNoise * 0.65f));
+    }
+
+    bool IsTerrainAir(const GenerateTerrain &_terrain, int _globalX, int _y, int _globalZ, int _columnHeight)
+    {
+        if (_y < 0)
+            return false;
+
+        if (_y >= _columnHeight)
+            return true;
+
+        const int depthFromSurface = (_columnHeight - 1) - _y;
+        if (_y <= 1 || depthFromSurface <= 0)
+            return false;
+
+        const float caveField = GetCaveField(_terrain, _globalX, _y, _globalZ);
+        float caveThreshold = 0.72f;
+        if (depthFromSurface <= 4)
+            caveThreshold -= 0.07f;
+        if (_y <= 3)
+            caveThreshold += 0.06f;
+
+        const float normalizedHeight = static_cast<float>(_y) / static_cast<float>(std::max(1, _terrain.chunkHeight - 1));
+        caveThreshold += std::abs(normalizedHeight - 0.42f) * 0.12f;
+
+        return caveField > caveThreshold;
+    }
+
+    bool IsTerrainAir(const GenerateTerrain &_terrain, int _globalX, int _y, int _globalZ)
+    {
+        const int columnHeight = std::min(_terrain.chunkHeight, GetTerrainHeight(_terrain, _globalX, _globalZ));
+        return IsTerrainAir(_terrain, _globalX, _y, _globalZ, columnHeight);
+    }
+
+    bool IsAdjacentToAir(const GenerateTerrain &_terrain, int _globalX, int _y, int _globalZ)
+    {
+        static constexpr int kNeighborOffsets[6][3] = {
+            { 1, 0, 0 },
+            { -1, 0, 0 },
+            { 0, 1, 0 },
+            { 0, -1, 0 },
+            { 0, 0, 1 },
+            { 0, 0, -1 },
+        };
+
+        for (const auto &offset : kNeighborOffsets)
+        {
+            if (IsTerrainAir(_terrain, _globalX + offset[0], _y + offset[1], _globalZ + offset[2]))
+                return true;
+        }
+
+        return false;
+    }
+
+    float GetOreField(float _x, float _y, float _z, float _scale, int _seed)
+    {
+        const float clusterNoise = FractalNoise3D(_x * _scale, _y * _scale, _z * _scale, _seed, 3);
+        const float veinNoise = RidgedNoise3D(_x * _scale * 2.4f, _y * _scale * 2.4f, _z * _scale * 2.4f, _seed + 19, 2);
+        return Saturate((clusterNoise * 0.28f) + (veinNoise * 0.72f));
+    }
+
+    std::uint64_t MakeChunkKey(int _chunkX, int _chunkZ)
+    {
+        return (static_cast<std::uint64_t>(static_cast<std::uint32_t>(_chunkX)) << 32u) |
+            static_cast<std::uint32_t>(_chunkZ);
+    }
+
+    int GetChunkWindowStart(int _centerChunk, int _windowSize)
+    {
+        return _centerChunk - (_windowSize / 2);
+    }
+
     TerrainBlockType GetTerrainBlockType(const GenerateTerrain &_terrain, int _globalX, int _y, int _globalZ, int _columnHeight)
     {
         const bool isSurface = (_y == (_columnHeight - 1));
-        if (!isSurface && _y > 2 && _y < (_columnHeight - 2))
-        {
-            const float caveNoise = FractalNoise3D(
-                static_cast<float>(_globalX) * _terrain.caveNoiseScale,
-                static_cast<float>(_y) * _terrain.caveNoiseScale,
-                static_cast<float>(_globalZ) * _terrain.caveNoiseScale,
-                _terrain.seed + 401,
-                3);
-            if (caveNoise > 0.72f)
-                return TerrainBlockType::Air;
-        }
+        if (IsTerrainAir(_terrain, _globalX, _y, _globalZ, _columnHeight))
+            return TerrainBlockType::Air;
 
         if (isSurface && _columnHeight >= _terrain.surfaceIceHeight)
             return TerrainBlockType::Ice;
 
-        const float uraniumNoise = FractalNoise3D(
-            static_cast<float>(_globalX) * 0.18f,
-            static_cast<float>(_y) * 0.18f,
-            static_cast<float>(_globalZ) * 0.18f,
-            _terrain.seed + 601,
-            2);
-        if (_y < (_columnHeight / 2) && uraniumNoise > 0.80f)
-            return TerrainBlockType::Uranium;
+        const float blockX = static_cast<float>(_globalX);
+        const float blockY = static_cast<float>(_y);
+        const float blockZ = static_cast<float>(_globalZ);
 
-        const float goldNoise = FractalNoise3D(
-            static_cast<float>(_globalX) * 0.14f,
-            static_cast<float>(_y) * 0.14f,
-            static_cast<float>(_globalZ) * 0.14f,
-            _terrain.seed + 777,
-            2);
-        if (_y < (_columnHeight - 1) && goldNoise > 0.78f)
-            return TerrainBlockType::Gold;
+        if (_y < (_columnHeight / 2))
+        {
+            const float uraniumNoise = GetOreField(blockX, blockY, blockZ, 0.18f, _terrain.seed + 601);
+            if (uraniumNoise > 0.88f)
+                return TerrainBlockType::Uranium;
+            if (uraniumNoise > 0.79f && IsAdjacentToAir(_terrain, _globalX, _y, _globalZ))
+                return TerrainBlockType::Uranium;
+        }
+
+        if (_y < (_columnHeight - 1))
+        {
+            const float goldNoise = GetOreField(blockX, blockY, blockZ, 0.14f, _terrain.seed + 777);
+            if (goldNoise > 0.86f)
+                return TerrainBlockType::Gold;
+            if (goldNoise > 0.76f && IsAdjacentToAir(_terrain, _globalX, _y, _globalZ))
+                return TerrainBlockType::Gold;
+        }
 
         return TerrainBlockType::Rock;
     }
@@ -211,6 +307,184 @@ DEFAULT_UNREGISTER_SCRIPT(generateTerrainConf, GenerateTerrain)
 
 void GenerateTerrain::Create() {}
 
+void GenerateTerrain::CacheMaterials()
+{
+    if (m_rockMaterialId < 0)
+        m_rockMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_rock.material");
+    if (m_iceMaterialId < 0)
+        m_iceMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_ice.material");
+    if (m_goldMaterialId < 0)
+        m_goldMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_gold.material");
+    if (m_uraniumMaterialId < 0)
+        m_uraniumMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_uranium.material");
+}
+
+void GenerateTerrain::EnsurePlayerEntity()
+{
+    if (m_playerEntity != nullptr &&
+        m_playerEntity->active &&
+        m_playerEntity->HasComponent<Canis::Transform>())
+        return;
+
+    m_playerEntity = entity.scene.GetEntityWithTag("Player");
+    if (m_playerEntity != nullptr &&
+        (!m_playerEntity->active || !m_playerEntity->HasComponent<Canis::Transform>()))
+        m_playerEntity = nullptr;
+}
+
+Canis::Vector3 GenerateTerrain::GetStreamingFocusPosition() const
+{
+    if (m_playerEntity != nullptr &&
+        m_playerEntity->active &&
+        m_playerEntity->HasComponent<Canis::Transform>())
+    {
+        return m_playerEntity->GetComponent<Canis::Transform>().GetGlobalPosition();
+    }
+
+    if (entity.HasComponent<Canis::Transform>())
+        return entity.GetComponent<Canis::Transform>().GetGlobalPosition();
+
+    return Canis::Vector3(0.0f);
+}
+
+void GenerateTerrain::PopulateChunk(VoxelTerrainChunk &_chunk, int _chunkX, int _chunkZ) const
+{
+    _chunk.Resize(chunkSize, chunkHeight, chunkSize);
+
+    for (int localZ = 0; localZ < chunkSize; ++localZ)
+    {
+        for (int localX = 0; localX < chunkSize; ++localX)
+        {
+            const int globalX = (_chunkX * chunkSize) + localX;
+            const int globalZ = (_chunkZ * chunkSize) + localZ;
+            const int columnHeight = std::min(chunkHeight, GetTerrainHeight(*this, globalX, globalZ));
+
+            for (int y = 0; y < columnHeight; ++y)
+            {
+                const TerrainBlockType blockType = GetTerrainBlockType(*this, globalX, y, globalZ, columnHeight);
+                if (blockType != TerrainBlockType::Air)
+                    _chunk.SetBlock(localX, y, localZ, blockType);
+            }
+        }
+    }
+}
+
+Canis::Entity* GenerateTerrain::CreateChunkEntity(int _chunkX, int _chunkZ)
+{
+    Canis::Entity *chunkEntity = entity.scene.CreateEntity(
+        "TerrainChunk_" + std::to_string(_chunkX) + "_" + std::to_string(_chunkZ));
+    if (chunkEntity == nullptr)
+        return nullptr;
+
+    Canis::Transform &chunkTransform = chunkEntity->GetComponent<Canis::Transform>();
+    chunkTransform.SetParent(&entity);
+    chunkTransform.position = Canis::Vector3(
+        static_cast<float>(_chunkX * chunkSize),
+        0.0f,
+        static_cast<float>(_chunkZ * chunkSize));
+
+    Canis::Rigidbody &rigidbody = chunkEntity->GetComponent<Canis::Rigidbody>();
+    rigidbody.motionType = Canis::RigidbodyMotionType::STATIC;
+    rigidbody.useGravity = false;
+    rigidbody.layer = 5u;
+
+    Canis::MeshCollider &meshCollider = chunkEntity->GetComponent<Canis::MeshCollider>();
+    meshCollider.active = true;
+    meshCollider.useAttachedModel = true;
+
+    chunkEntity->GetComponent<Canis::Model>();
+    chunkEntity->GetComponent<Canis::Material>();
+
+    VoxelTerrainChunk *chunk = chunkEntity->AddScript<VoxelTerrainChunk>();
+    if (chunk == nullptr)
+    {
+        entity.scene.Destroy(*chunkEntity);
+        return nullptr;
+    }
+
+    chunk->sizeX = chunkSize;
+    chunk->sizeY = chunkHeight;
+    chunk->sizeZ = chunkSize;
+    chunk->rockMaterialId = m_rockMaterialId;
+    chunk->iceMaterialId = m_iceMaterialId;
+    chunk->goldMaterialId = m_goldMaterialId;
+    chunk->uraniumMaterialId = m_uraniumMaterialId;
+    chunk->rockDropPrefab = rockDropPrefab;
+    chunk->iceDropPrefab = iceDropPrefab;
+    chunk->goldDropPrefab = goldDropPrefab;
+    chunk->uraniumDropPrefab = uraniumDropPrefab;
+
+    PopulateChunk(*chunk, _chunkX, _chunkZ);
+    chunk->RebuildMesh();
+    return chunkEntity;
+}
+
+void GenerateTerrain::RefreshLoadedChunks(bool _forceRefresh)
+{
+    if (!entity.HasComponent<Canis::Transform>())
+        return;
+
+    EnsurePlayerEntity();
+
+    const Canis::Vector3 focusPosition = GetStreamingFocusPosition();
+    const Canis::Vector3 terrainOrigin = entity.GetComponent<Canis::Transform>().GetGlobalPosition();
+
+    const int centerChunkX = static_cast<int>(std::floor((focusPosition.x - terrainOrigin.x) / static_cast<float>(chunkSize)));
+    const int centerChunkZ = static_cast<int>(std::floor((focusPosition.z - terrainOrigin.z) / static_cast<float>(chunkSize)));
+
+    if (!_forceRefresh &&
+        centerChunkX == m_lastCenterChunkX &&
+        centerChunkZ == m_lastCenterChunkZ)
+        return;
+
+    const int startChunkX = GetChunkWindowStart(centerChunkX, chunksX);
+    const int startChunkZ = GetChunkWindowStart(centerChunkZ, chunksZ);
+
+    std::unordered_set<std::uint64_t> desiredChunkKeys = {};
+    desiredChunkKeys.reserve(static_cast<size_t>(chunksX * chunksZ));
+
+    for (int chunkOffsetZ = 0; chunkOffsetZ < chunksZ; ++chunkOffsetZ)
+    {
+        for (int chunkOffsetX = 0; chunkOffsetX < chunksX; ++chunkOffsetX)
+        {
+            const int chunkX = startChunkX + chunkOffsetX;
+            const int chunkZ = startChunkZ + chunkOffsetZ;
+            const std::uint64_t chunkKey = MakeChunkKey(chunkX, chunkZ);
+            desiredChunkKeys.insert(chunkKey);
+
+            if (m_loadedChunkEntities.find(chunkKey) != m_loadedChunkEntities.end())
+                continue;
+
+            if (Canis::Entity *chunkEntity = CreateChunkEntity(chunkX, chunkZ))
+                m_loadedChunkEntities[chunkKey] = chunkEntity->id;
+        }
+    }
+
+    std::vector<std::uint64_t> keysToUnload = {};
+    keysToUnload.reserve(m_loadedChunkEntities.size());
+    for (const auto &[chunkKey, entityId] : m_loadedChunkEntities)
+    {
+        (void)entityId;
+        if (desiredChunkKeys.find(chunkKey) == desiredChunkKeys.end())
+            keysToUnload.push_back(chunkKey);
+    }
+
+    for (const std::uint64_t chunkKey : keysToUnload)
+    {
+        auto it = m_loadedChunkEntities.find(chunkKey);
+        if (it == m_loadedChunkEntities.end())
+            continue;
+
+        if (Canis::Entity *chunkEntity = entity.scene.GetEntity(it->second))
+            entity.scene.Destroy(*chunkEntity);
+
+        m_loadedChunkEntities.erase(it);
+    }
+
+    m_lastCenterChunkX = centerChunkX;
+    m_lastCenterChunkZ = centerChunkZ;
+}
+
 void GenerateTerrain::Ready()
 {
     if (m_generated || !entity.HasComponent<Canis::Transform>())
@@ -223,80 +497,39 @@ void GenerateTerrain::Ready()
     baseHeight = std::clamp(baseHeight, 1, chunkHeight - 1);
     maxHeightVariation = std::max(1, maxHeightVariation);
     surfaceIceHeight = std::max(1, surfaceIceHeight);
+    m_loadedChunkEntities.clear();
+    m_lastCenterChunkX = std::numeric_limits<int>::max();
+    m_lastCenterChunkZ = std::numeric_limits<int>::max();
 
-    const int rockMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_rock.material");
-    const int iceMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_ice.material");
-    const int goldMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_gold.material");
-    const int uraniumMaterialId = Canis::AssetManager::LoadMaterial("assets/materials/terrain_uranium.material");
-
-    for (int chunkZIndex = 0; chunkZIndex < chunksZ; ++chunkZIndex)
-    {
-        for (int chunkXIndex = 0; chunkXIndex < chunksX; ++chunkXIndex)
-        {
-            Canis::Entity *chunkEntity = entity.scene.CreateEntity("TerrainChunk");
-            if (chunkEntity == nullptr)
-                continue;
-
-            Canis::Transform &chunkTransform = chunkEntity->GetComponent<Canis::Transform>();
-            chunkTransform.SetParent(&entity);
-            chunkTransform.position = Canis::Vector3(
-                static_cast<float>(chunkXIndex * chunkSize),
-                0.0f,
-                static_cast<float>(chunkZIndex * chunkSize));
-
-            Canis::Rigidbody &rigidbody = chunkEntity->GetComponent<Canis::Rigidbody>();
-            rigidbody.motionType = Canis::RigidbodyMotionType::STATIC;
-            rigidbody.useGravity = false;
-            rigidbody.layer = 5u;
-
-            Canis::MeshCollider &meshCollider = chunkEntity->GetComponent<Canis::MeshCollider>();
-            meshCollider.active = true;
-            meshCollider.useAttachedModel = true;
-
-            chunkEntity->GetComponent<Canis::Model>();
-            chunkEntity->GetComponent<Canis::Material>();
-
-            VoxelTerrainChunk *chunk = chunkEntity->AddScript<VoxelTerrainChunk>();
-            chunk->sizeX = chunkSize;
-            chunk->sizeY = chunkHeight;
-            chunk->sizeZ = chunkSize;
-            chunk->rockMaterialId = rockMaterialId;
-            chunk->iceMaterialId = iceMaterialId;
-            chunk->goldMaterialId = goldMaterialId;
-            chunk->uraniumMaterialId = uraniumMaterialId;
-            chunk->rockDropPrefab = rockDropPrefab;
-            chunk->iceDropPrefab = iceDropPrefab;
-            chunk->goldDropPrefab = goldDropPrefab;
-            chunk->uraniumDropPrefab = uraniumDropPrefab;
-            chunk->Resize(chunkSize, chunkHeight, chunkSize);
-
-            for (int localZ = 0; localZ < chunkSize; ++localZ)
-            {
-                for (int localX = 0; localX < chunkSize; ++localX)
-                {
-                    const int globalX = (chunkXIndex * chunkSize) + localX;
-                    const int globalZ = (chunkZIndex * chunkSize) + localZ;
-                    const int columnHeight = std::min(chunkHeight, GetTerrainHeight(*this, globalX, globalZ));
-
-                    for (int y = 0; y < columnHeight; ++y)
-                    {
-                        const TerrainBlockType blockType = GetTerrainBlockType(*this, globalX, y, globalZ, columnHeight);
-                        if (blockType != TerrainBlockType::Air)
-                            chunk->SetBlock(localX, y, localZ, blockType);
-                    }
-                }
-            }
-
-            chunk->RebuildMesh();
-        }
-    }
+    CacheMaterials();
+    EnsurePlayerEntity();
+    RefreshLoadedChunks(true);
 
     m_generated = true;
 }
 
-void GenerateTerrain::Destroy() {}
+void GenerateTerrain::Destroy()
+{
+    for (const auto &[chunkKey, entityId] : m_loadedChunkEntities)
+    {
+        (void)chunkKey;
+        if (Canis::Entity *chunkEntity = entity.scene.GetEntity(entityId))
+            entity.scene.Destroy(*chunkEntity);
+    }
+
+    m_loadedChunkEntities.clear();
+    m_playerEntity = nullptr;
+    m_lastCenterChunkX = std::numeric_limits<int>::max();
+    m_lastCenterChunkZ = std::numeric_limits<int>::max();
+    m_generated = false;
+}
 
 void GenerateTerrain::Update(float _dt)
 {
     (void)_dt;
+
+    if (!m_generated)
+        return;
+
+    RefreshLoadedChunks(false);
 }
