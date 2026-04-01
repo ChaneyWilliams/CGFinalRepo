@@ -41,6 +41,13 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   add_compile_options(-fno-gnu-unique)
 endif()
 
+if (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  # MinGW's default COFF object format can run out of sections on large TUs.
+  # -Wa,-mbig-obj raises the limit, and -O2 matches the workaround needed to
+  # avoid the related string-table overflow on very large generated objects.
+  add_compile_options(-Wa,-mbig-obj -O2)
+endif()
+
 find_program(CCACHE_PROGRAM ccache)
 if (CCACHE_PROGRAM)
   message(STATUS "Using ccache: ${CCACHE_PROGRAM}")
