@@ -92,6 +92,11 @@ set(SDL_TEST_LIBRARY OFF CACHE BOOL "" FORCE)
 if(CANIS_PLATFORM_WEB)
   set(SDL_SHARED OFF CACHE BOOL "" FORCE)
   set(SDL_STATIC ON CACHE BOOL "" FORCE)
+else()
+  # Use the static SDL build on desktop so the runtime doesn't depend on
+  # a separate SDL3 DLL being replaced while the app is running.
+  set(SDL_SHARED OFF CACHE BOOL "" FORCE)
+  set(SDL_STATIC ON CACHE BOOL "" FORCE)
 endif()
 
 set(glew-cmake_BUILD_SHARED         FALSE)

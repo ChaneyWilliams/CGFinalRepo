@@ -65,6 +65,7 @@ target_precompile_headers(GameCode PRIVATE
 # Link to SDL3 (for logging or future rendering use)
 target_link_libraries(GameCode
     CanisEngine
+    yaml-cpp
 )
 
 target_compile_definitions(GameCode
