@@ -11,7 +11,7 @@ editor: true
 syncMode: 0
 iconUUID: 8708093225096235882
 launchScene: 17046375449994097932
-editorWindowWidth: 2560
-editorWindowHeight: 1514
+editorWindowWidth: 500
+editorWindowHeight: 500
 targetGameWidth: 512
 targetGameHeight: 512
