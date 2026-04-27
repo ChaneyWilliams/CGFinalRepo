@@ -41387,7 +41387,7 @@ Entities:
     Tag: ""
     Canis::Transform:
       active: true
-      position: [6, 1, -2.5740862]
+      position: [6, 0.5, -2.5740862]
       rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 0
@@ -41422,11 +41422,13 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 6253644375858535370
+        uuid: 10774028945058531989
+      MaterialSlots:
+        - ~
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
-        uuid: 17154083321347000101
-    BlockGame::FireTest:
-      maxIntensity: 7
-      hiddenObject: 14544364268962389024
+        uuid: 14816117620444291383
+    BlockGame::FireAnimation:
+      totalTime: 0
+      pulse: 1

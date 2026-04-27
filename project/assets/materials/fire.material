@@ -1,0 +1,26 @@
+shader:
+  uuid: 4815449060240426288
+  path: assets/shaders/fire.fs
+albedo:
+  uuid: 5867584922054891289
+  path: assets/textures/AllFireAtlas.png
+color: [0.9852941, 0.9852941, 0.9852941, 1]
+backFaceCulling: true
+specularValue: 0.05
+uniforms:
+  frameCount:
+    type: int
+    value: 32
+  time:
+    type: float
+    value: 0
+  animationSpeed:
+    type: float
+    value: 25
+  firepulse:
+    type: float
+    value: 0
+  frameJumper:
+    type: float
+    value: 16
+frontFaceCulling: true
