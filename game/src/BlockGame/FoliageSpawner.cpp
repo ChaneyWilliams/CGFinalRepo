@@ -82,7 +82,6 @@ namespace BlockGame
                     }
                 }
             }
-            // else 2 → nothing
         }
     }
 

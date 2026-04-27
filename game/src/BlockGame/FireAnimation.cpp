@@ -2,6 +2,7 @@
 
 #include <Canis/App.hpp>
 #include <Canis/ConfigHelper.hpp>
+#include <Canis/Debug.hpp>
 
 namespace BlockGame
 {
@@ -14,6 +15,8 @@ namespace BlockGame
     {
         REGISTER_PROPERTY(scriptConf, BlockGame::FireAnimation, totalTime);
         REGISTER_PROPERTY(scriptConf, BlockGame::FireAnimation, pulse);
+        REGISTER_PROPERTY(scriptConf, BlockGame::FireAnimation, maxIntensity);
+        REGISTER_PROPERTY(scriptConf, BlockGame::FireAnimation, minIntensity);
 
         DEFAULT_CONFIG(scriptConf, BlockGame::FireAnimation);
 
@@ -24,7 +27,8 @@ namespace BlockGame
 
     DEFAULT_UNREGISTER_SCRIPT(scriptConf, FireAnimation)
 
-    void FireAnimation::Create() {}
+    void FireAnimation::Create() {
+    }
 
     void FireAnimation::Ready() {}
 
@@ -39,5 +43,11 @@ namespace BlockGame
         material.color.a = 0.9f;
         material.materialFields.SetFloat("firePulse", pulse);
         material.materialFields.SetFloat("TIME", totalTime);
+
+
+        //ever just start placing & and * to see if that'll fix something
+        //it worked for once
+        PointLight* point = &(entity.GetComponent<PointLight>());
+        point->intensity = (sin(totalTime) * 0.5f + minIntensity) * maxIntensity;
     }
 }

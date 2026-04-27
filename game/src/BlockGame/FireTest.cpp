@@ -36,6 +36,6 @@ namespace BlockGame
 
     void FireTest::Update(float _dt) {
         PointLight point = entity.GetComponent<PointLight>();
-        point.intensity += _dt;
+        point.intensity = maxIntensity;
     }
 }
