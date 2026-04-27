@@ -1,5 +1,6 @@
 shader:
-  uuid: 6400860063539446878
+  uuid: 17945148160919353052
+  path: assets/shaders/grass_block.fs
 albedo:
   uuid: 13747563081092341335
   path: assets/textures/block_game/grass_block_top.png
@@ -9,3 +10,14 @@ specularValue: 0.19
 frontFaceCulling: false
 roughnessValue: 1
 metallicValue: 0.62
+uniforms:
+  sideTexture:
+    type: texture
+    value:
+      uuid: 14555106358046617180
+      path: assets/textures/block_game/grass_block_side.png
+  topTexture:
+    type: texture
+    value:
+      uuid: 13747563081092341335
+      path: assets/textures/block_game/grass_block_top.png

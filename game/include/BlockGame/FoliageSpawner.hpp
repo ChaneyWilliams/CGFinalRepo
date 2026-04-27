@@ -15,7 +15,7 @@ namespace BlockGame
         static constexpr const char* ScriptName = "BlockGame::FoliageSpawner";
 
         explicit FoliageSpawner(Canis::Entity& _entity) : Canis::ScriptableEntity(_entity) {}
-
+        //basically get all the blocks tagged grass and randomly decide if they get grass, flower, or nothing
         Canis::SceneAssetHandle flowerPrefab;
         Canis::SceneAssetHandle grassPrefab;
 
