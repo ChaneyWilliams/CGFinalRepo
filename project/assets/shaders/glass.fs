@@ -115,6 +115,8 @@ void main()
     vec3 viewDir = normalize(cameraPosition - fragmentWorldPos);
 
     vec4 albedoTex = useAlbedoMap ? texture(albedoMap, fragmentUV) : vec4(1.0);
+    if(albedoTex.a < 0.5)
+        discard;
     vec4 albedo = albedoValue * albedoTex;
     vec3 albedoLinear = SRGBToLinear(albedo.rgb);
 

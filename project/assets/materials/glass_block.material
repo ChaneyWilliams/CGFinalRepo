@@ -5,7 +5,7 @@ albedo:
   uuid: 6158398062272968365
   path: assets/textures/block_game/glass.png
 color: [0.9852941, 0.9852941, 0.9852941, 1]
-backFaceCulling: false
+backFaceCulling: true
 specularValue: 0.05
 roughnessValue: 0
-frontFaceCulling: false
+frontFaceCulling: true

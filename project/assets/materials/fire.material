@@ -14,12 +14,9 @@ uniforms:
   time:
     type: float
     value: 0
-  animationSpeed:
-    type: float
-    value: 25
   firepulse:
     type: float
-    value: 0
+    value: 1
   frameJumper:
     type: float
     value: 16

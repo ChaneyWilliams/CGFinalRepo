@@ -36,7 +36,6 @@ uniform float pointLightIntensities[MAX_POINT_LIGHTS];
 uniform float pointLightRanges[MAX_POINT_LIGHTS];
 
 uniform float TIME;
-uniform float animationSpeed;
 uniform int frameCount;
 uniform float firePulse;
 uniform float frameJumper;
