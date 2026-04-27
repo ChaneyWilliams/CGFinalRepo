@@ -1,0 +1,24 @@
+Environment:
+  ClearColor: [0.38626686, 0.10652154, 0.7009804, 1]
+Entities:
+  - Entity: 2240996438896406725
+    Name: Flower
+    Tag: ""
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 0
+      children:
+        []
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 5784375649053136860
+      MaterialSlots:
+        - ~
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 6473578462729814710

@@ -6952,42 +6952,21 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 17154083321347000101
-  - Entity: 10211000267266193331
-    Name: OakPlanksBlock
+  - Entity: 8873072173516257865
+    Name: GlassBlock
     Tag: ""
     Canis::Transform:
       active: true
-      position: [7, 1, 4]
-      rotation: [0, 0, 0]
+      position: [14.974486, 3.2213995, 2.4393334]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
-      parent: 3787836677395797716
+      parent: 0
       children:
         []
-    Canis::Rigidbody:
-      active: true
-      motionType: 0
-      mass: 1
-      friction: 0.2
-      restitution: 0
-      linearDamping: 0.05
-      angularDamping: 0.05
-      useGravity: false
-      isSensor: false
-      layer: 4
-      mask: 4294967295
-      allowSleeping: false
-      lockRotationX: false
-      lockRotationY: false
-      lockRotationZ: false
-      linearVelocity: [0, 0, 0]
-      angularVelocity: [0, 0, 0]
-    Canis::BoxCollider:
-      active: true
-      size: [1, 1, 1]
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 10740271708822209468
+        uuid: 1434184087647369091
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
@@ -6998,86 +6977,6 @@ Entities:
     Canis::Transform:
       active: true
       position: [5, 1, 4]
-      rotation: [0, -0, 0]
-      scale: [1, 1, 1]
-      parent: 3787836677395797716
-      children:
-        []
-    Canis::Rigidbody:
-      active: true
-      motionType: 0
-      mass: 1
-      friction: 0.2
-      restitution: 0
-      linearDamping: 0.05
-      angularDamping: 0.05
-      useGravity: false
-      isSensor: false
-      layer: 4
-      mask: 4294967295
-      allowSleeping: false
-      lockRotationX: false
-      lockRotationY: false
-      lockRotationZ: false
-      linearVelocity: [0, 0, 0]
-      angularVelocity: [0, 0, 0]
-    Canis::BoxCollider:
-      active: true
-      size: [1, 1, 1]
-    Canis::Material:
-      color: [1, 1, 1, 1]
-      MaterialAsset:
-        uuid: 10740271708822209468
-    Canis::Model:
-      color: [1, 1, 1, 1]
-      ModelAsset:
-        uuid: 17154083321347000101
-  - Entity: 212997997765790938
-    Name: OakPlanksBlock
-    Tag: ""
-    Canis::Transform:
-      active: true
-      position: [6, 1, 4]
-      rotation: [0, -0, 0]
-      scale: [1, 1, 1]
-      parent: 3787836677395797716
-      children:
-        []
-    Canis::Rigidbody:
-      active: true
-      motionType: 0
-      mass: 1
-      friction: 0.2
-      restitution: 0
-      linearDamping: 0.05
-      angularDamping: 0.05
-      useGravity: false
-      isSensor: false
-      layer: 4
-      mask: 4294967295
-      allowSleeping: false
-      lockRotationX: false
-      lockRotationY: false
-      lockRotationZ: false
-      linearVelocity: [0, 0, 0]
-      angularVelocity: [0, 0, 0]
-    Canis::BoxCollider:
-      active: true
-      size: [1, 1, 1]
-    Canis::Material:
-      color: [1, 1, 1, 1]
-      MaterialAsset:
-        uuid: 10740271708822209468
-    Canis::Model:
-      color: [1, 1, 1, 1]
-      ModelAsset:
-        uuid: 17154083321347000101
-  - Entity: 18297801710358802125
-    Name: OakPlanksBlock
-    Tag: ""
-    Canis::Transform:
-      active: true
-      position: [6, 2, 4]
       rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 3787836677395797716
@@ -7832,46 +7731,6 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 17154083321347000101
-  - Entity: 13064222019961098205
-    Name: OakPlanksBlock
-    Tag: ""
-    Canis::Transform:
-      active: true
-      position: [7, 2, 4]
-      rotation: [0, 0, 0]
-      scale: [1, 1, 1]
-      parent: 3787836677395797716
-      children:
-        []
-    Canis::Rigidbody:
-      active: true
-      motionType: 0
-      mass: 1
-      friction: 0.2
-      restitution: 0
-      linearDamping: 0.05
-      angularDamping: 0.05
-      useGravity: false
-      isSensor: false
-      layer: 4
-      mask: 4294967295
-      allowSleeping: false
-      lockRotationX: false
-      lockRotationY: false
-      lockRotationZ: false
-      linearVelocity: [0, 0, 0]
-      angularVelocity: [0, 0, 0]
-    Canis::BoxCollider:
-      active: true
-      size: [1, 1, 1]
-    Canis::Material:
-      color: [1, 1, 1, 1]
-      MaterialAsset:
-        uuid: 10740271708822209468
-    Canis::Model:
-      color: [1, 1, 1, 1]
-      ModelAsset:
-        uuid: 17154083321347000101
   - Entity: 14940112135581836575
     Name: OakPlanksBlock
     Tag: ""
@@ -8254,7 +8113,6 @@ Entities:
         - 9208607539325495283
         - 3060979583816693625
         - 4355051025096810033
-        - 13064222019961098205
         - 14940112135581836575
         - 4683430603662095025
         - 7351238914238670909
@@ -8270,10 +8128,7 @@ Entities:
         - 15068250523438990319
         - 8995965253006196836
         - 3571468812170197987
-        - 10211000267266193331
         - 6477952993586889665
-        - 212997997765790938
-        - 18297801710358802125
         - 13506283496439125547
         - 16067854840821475620
         - 2857532112986770625
@@ -14113,7 +13968,7 @@ Entities:
     Tag: ""
     Canis::Transform:
       active: true
-      position: [6, 0, 4]
+      position: [7, 0, 4]
       rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 17634691774228221544
@@ -14493,7 +14348,7 @@ Entities:
     Tag: ""
     Canis::Transform:
       active: true
-      position: [5, 0, 4]
+      position: [6, 0, 4]
       rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 17634691774228221544

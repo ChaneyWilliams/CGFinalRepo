@@ -1,0 +1,11 @@
+shader:
+  uuid: 3264729664025118525
+  path: assets/shaders/glass.fs
+albedo:
+  uuid: 6158398062272968365
+  path: assets/textures/block_game/glass.png
+color: [0.9852941, 0.9852941, 0.9852941, 1]
+backFaceCulling: false
+specularValue: 0.05
+roughnessValue: 0
+frontFaceCulling: false
