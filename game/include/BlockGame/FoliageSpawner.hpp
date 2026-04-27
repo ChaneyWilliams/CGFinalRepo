@@ -1,0 +1,32 @@
+#pragma once
+
+#include <Canis/Entity.hpp>
+
+namespace Canis
+{
+    class App;
+}
+
+namespace BlockGame
+{
+    class FoliageSpawner : public Canis::ScriptableEntity
+    {
+    public:
+        static constexpr const char* ScriptName = "BlockGame::FoliageSpawner";
+
+        explicit FoliageSpawner(Canis::Entity& _entity) : Canis::ScriptableEntity(_entity) {}
+
+        Canis::SceneAssetHandle flowerPrefab;
+        Canis::SceneAssetHandle grassPrefab;
+
+        void Create() override;
+        void Ready() override;
+        void Destroy() override;
+        void Update(float _dt) override;
+    private:
+        std::vector<Canis::Entity*> grassBlocks;
+    };
+
+    void RegisterFoliageSpawnerScript(Canis::App& _app);
+    void UnRegisterFoliageSpawnerScript(Canis::App& _app);
+}

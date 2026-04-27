@@ -1,8 +1,8 @@
 Environment:
   ClearColor: [0.38626686, 0.10652154, 0.7009804, 1]
 Entities:
-  - Entity: 2240996438896406725
-    Name: Flower
+  - Entity: 11577267977543801710
+    Name: Cube
     Tag: ""
     Canis::Transform:
       active: true
@@ -15,7 +15,7 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 5784375649053136860
+        uuid: 8831350228116005796
       MaterialSlots:
         - ~
     Canis::Model:
