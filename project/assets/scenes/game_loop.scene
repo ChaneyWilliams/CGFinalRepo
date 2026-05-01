@@ -40888,16 +40888,14 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 10774028945058531989
+        uuid: 16413279664958483139
       MaterialSlots:
         - ~
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 14816117620444291383
-    BlockGame::FireAnimation:
-      totalTime: 0
-      pulse: 1
+    BlockGame::NewFireAnim: ~
   - Entity: 1443128154266035054
     Name: GlassBlock
     Tag: ""
@@ -41054,16 +41052,14 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 10774028945058531989
+        uuid: 16413279664958483139
       MaterialSlots:
         - ~
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 14816117620444291383
-    BlockGame::FireAnimation:
-      totalTime: 0
-      pulse: 1
+    BlockGame::NewFireAnim: ~
   - Entity: 10904307024655731350
     Name: Chimney
     Tag: ""

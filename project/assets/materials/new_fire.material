@@ -1,0 +1,14 @@
+shader:
+  uuid: 13560447616324714275
+  path: assets/shaders/newFire.fs
+albedo:
+  uuid: 16060716090729117806
+color: [0.9852941, 0.9852941, 0.9852941, 1]
+backFaceCulling: true
+specularValue: 0.05
+uniforms:
+  albedoFireMap:
+    type: texture
+    value:
+      uuid: 14224553623880955770
+      path: assets/textures/fire_textures/fire_1.png

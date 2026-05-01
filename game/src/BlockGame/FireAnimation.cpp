@@ -1,4 +1,5 @@
 #include <BlockGame/FireAnimation.hpp>
+#include <Canis/AssetManager.hpp>
 
 #include <Canis/App.hpp>
 #include <Canis/ConfigHelper.hpp>
@@ -30,7 +31,19 @@ namespace BlockGame
     void FireAnimation::Create() {
     }
 
-    void FireAnimation::Ready() {}
+    void FireAnimation::Ready() {
+
+        //affects everything using that material
+        //i32 textureid = AssetManager::LoadTexture("assets/textures/fire_textures/fire_" + std::to_string(1) + ".png");
+        //i32 materialid = entity.GetComponent<Canis::Material>().materialId; 
+        //MaterialAsset* material = AssetManager::GetMaterial(materialid);
+        //material->albedoId = textureid;
+
+        //affects just this object
+        //i32 textureid = AssetManager::LoadTexture("assets/textures/fire_textures/fire_" + std::to_string(1) + ".png");
+        //i32 materialid = entity.GetComponent<Canis::Material>().materialId; 
+        //entity.GetComponent<Material>().materialFields.SetTexture("albedoFireMap", textureid);
+    }
 
     void FireAnimation::Destroy() {}
 
