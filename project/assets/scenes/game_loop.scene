@@ -10,9 +10,9 @@ Entities:
     Tag: MainCamera
     Canis::Transform:
       active: true
-      position: [0, 8, 10]
-      rotation: [-0.62, 0, 0]
-      scale: [1, 1, 1]
+      position: [6.7267485, 3.5774198, 14.307618]
+      rotation: [-0.26179913, -0, 0]
+      scale: [1, 0.99999964, 0.99999964]
       parent: 0
       children:
         []
@@ -143,6 +143,8 @@ Entities:
         - 18393937761152081432
         - 7271345721150555707
         - 10904307024655731350
+        - 910106
+        - 6182491414165140994
     BlockGame::FoliageSpawner:
       grassPrefab: 15451873915280683135
       flowerPrefab: 3803563080615081354
@@ -151,10 +153,10 @@ Entities:
     Tag: ""
     Canis::Transform:
       active: true
-      position: [1, 2, -4]
-      rotation: [0, 0, 0]
+      position: [7, 0, -4]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
-      parent: 17803466669770591720
+      parent: 4810307925033041040
       children:
         []
     Canis::Rigidbody:
@@ -3129,15 +3131,15 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 17154083321347000101
-  - Entity: 345890260454316860
-    Name: BrickBlock
+  - Entity: 4541032422381064103
+    Name: OakBlock
     Tag: ""
     Canis::Transform:
       active: true
-      position: [6, 8, 3]
+      position: [1, 2, -4]
       rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 11117819332967828937
+      parent: 17803466669770591720
       children:
         []
     Canis::Rigidbody:
@@ -3164,20 +3166,20 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 6253644375858535370
+        uuid: 13904854601044475477
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 17154083321347000101
-  - Entity: 8167601743786313317
-    Name: BrickBlock
+  - Entity: 6182491414165140994
+    Name: OakBlock
     Tag: ""
     Canis::Transform:
       active: true
-      position: [7, 8, 3]
-      rotation: [0, 0, 0]
+      position: [6, 0, -4]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
-      parent: 11117819332967828937
+      parent: 4810307925033041040
       children:
         []
     Canis::Rigidbody:
@@ -3204,7 +3206,7 @@ Entities:
     Canis::Material:
       color: [1, 1, 1, 1]
       MaterialAsset:
-        uuid: 6253644375858535370
+        uuid: 13904854601044475477
     Canis::Model:
       color: [1, 1, 1, 1]
       ModelAsset:
@@ -3260,8 +3262,6 @@ Entities:
       parent: 123285772479511498
       children:
         - 13687982830776035643
-        - 8167601743786313317
-        - 345890260454316860
         - 5552170110757398133
         - 10138627099844361886
         - 5396804749970360188
@@ -4494,10 +4494,10 @@ Entities:
       scale: [1, 1, 1]
       parent: 7884233694091347639
       children:
-        - 910106
         - 5959090006503980744
         - 11093935292973041968
         - 17184104116894034126
+        - 4541032422381064103
   - Entity: 5959090006503980744
     Name: OakBlock
     Tag: ""
@@ -40895,7 +40895,8 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 14816117620444291383
-    BlockGame::NewFireAnim: ~
+    BlockGame::NewFireAnim:
+      frameTime: 0.03
   - Entity: 1443128154266035054
     Name: GlassBlock
     Tag: ""
@@ -41059,7 +41060,8 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 14816117620444291383
-    BlockGame::NewFireAnim: ~
+    BlockGame::NewFireAnim:
+      frameTime: 0.03
   - Entity: 10904307024655731350
     Name: Chimney
     Tag: ""

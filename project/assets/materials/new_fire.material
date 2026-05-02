@@ -12,3 +12,4 @@ uniforms:
     value:
       uuid: 14224553623880955770
       path: assets/textures/fire_textures/fire_1.png
+frontFaceCulling: false

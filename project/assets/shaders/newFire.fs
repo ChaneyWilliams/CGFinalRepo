@@ -136,7 +136,16 @@ void main()
     {
         vec3 lightDir = normalize(-directionalLightDirection);
         float shadow = ComputeDirectionalShadow(n, lightDir);
-        vec3 lightContribution = EvaluateLightContribution(n, viewDir, lightDir, directionalLightColor, directionalLightIntensity, roughness, specular, metallic, albedoLinear);
+        vec3 lightContribution = EvaluateLightContribution(
+            n,
+            viewDir,
+            lightDir,
+            directionalLightColor,
+            directionalLightIntensity,
+            roughness,
+            specular,
+            metallic, 
+            albedoLinear);
         litColor += lightContribution * (1.0 - (shadow * 0.95));
     }
 

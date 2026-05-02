@@ -50,6 +50,7 @@ namespace BlockGame
 
             if (result == 0)
             {
+                //*Note this was pre-website
                 // I couldnt find how instaniating worked so i dug into FOGPI
                 // and I just copy pasted the turret before it was changed to pooling
                 std::vector<Canis::Entity *> loaded = entity.scene.Instantiate(flowerPrefab);

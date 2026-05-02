@@ -16,6 +16,9 @@ namespace BlockGame
 
         explicit NewFireAnim(Canis::Entity& _entity) : Canis::ScriptableEntity(_entity) {}
 
+        //it says .5 but it doesnt look right or  I havent played minecraft in a bit
+        float frameTime = 0.03;
+
         int increment = 1;
         float totalTime = 0.0f;
 
