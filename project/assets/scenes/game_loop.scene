@@ -281,7 +281,7 @@ Entities:
       children:
         - 123285772479511498
         - 10166293866498123158
-        - 361929577382172952
+        - 14218168565572886870
   - Entity: 9681416509237755796
     Name: CobbleBase3
     Tag: ""
@@ -41105,46 +41105,6 @@ Entities:
         - 15452027475742177978
         - 2682757367096075410
         - 4780050145644076716
-  - Entity: 361929577382172952
-    Name: BrickBlock
-    Tag: ""
-    Canis::Transform:
-      active: true
-      position: [7, 0, 4]
-      rotation: [0, -0, 0]
-      scale: [1, 1, 1]
-      parent: 17634691774228221544
-      children:
-        []
-    Canis::Rigidbody:
-      active: true
-      motionType: 0
-      mass: 1
-      friction: 0.2
-      restitution: 0
-      linearDamping: 0.05
-      angularDamping: 0.05
-      useGravity: false
-      isSensor: false
-      layer: 4
-      mask: 4294967295
-      allowSleeping: false
-      lockRotationX: false
-      lockRotationY: false
-      lockRotationZ: false
-      linearVelocity: [0, 0, 0]
-      angularVelocity: [0, 0, 0]
-    Canis::BoxCollider:
-      active: true
-      size: [1, 1, 1]
-    Canis::Material:
-      color: [1, 1, 1, 1]
-      MaterialAsset:
-        uuid: 6253644375858535370
-    Canis::Model:
-      color: [1, 1, 1, 1]
-      ModelAsset:
-        uuid: 17154083321347000101
   - Entity: 15831350500154126597
     Name: BrickBlock
     Tag: ""
@@ -43506,3 +43466,43 @@ Entities:
         - 3629217504037023563
         - 11027688273959539406
         - 7169888510699664931
+  - Entity: 14218168565572886870
+    Name: BrickBlock
+    Tag: ""
+    Canis::Transform:
+      active: true
+      position: [7, 0, 4]
+      rotation: [0, -0, 0]
+      scale: [1, 1, 1]
+      parent: 17634691774228221544
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 6253644375858535370
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101

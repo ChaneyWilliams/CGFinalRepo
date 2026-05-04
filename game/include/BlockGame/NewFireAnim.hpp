@@ -21,6 +21,7 @@ namespace BlockGame
 
         int increment = 1;
         float totalTime = 0.0f;
+        float flickerTime = 0.0f;
 
         float minIntensity = 1.0f;
         float maxIntensity = 1.0f;

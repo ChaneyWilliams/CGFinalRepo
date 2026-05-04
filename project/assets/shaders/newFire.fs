@@ -130,7 +130,7 @@ void main()
     float roughness = clamp(roughnessValue * roughnessTex, 0.0, 1.0);
     float metallic = clamp(metallicValue * metallicTex, 0.0, 1.0);
 
-    vec3 litColor = albedoLinear * 0.04;
+    vec3 litColor = albedoLinear * 2.0;
 
     if (useDirectionalLight)
     {
@@ -146,7 +146,7 @@ void main()
             specular,
             metallic, 
             albedoLinear);
-        litColor += lightContribution * (1.0 - (shadow * 0.95));
+        //litColor += lightContribution * (1.0 - (shadow * 0.95));
     }
 
     for (int i = 0; i < pointLightCount && i < MAX_POINT_LIGHTS; ++i)
@@ -163,7 +163,7 @@ void main()
         }
 
         vec3 lightColor = pointLightColors[i] * pointLightIntensities[i];
-        litColor += EvaluateLightContribution(n, viewDir, lightDir, lightColor, attenuation, roughness, specular, metallic, albedoLinear);
+        //litColor += EvaluateLightContribution(n, viewDir, lightDir, lightColor, attenuation, roughness, specular, metallic, albedoLinear);
     }
 
     color = vec4(LinearToSRGB(ACESFilm(litColor)), albedo.a);

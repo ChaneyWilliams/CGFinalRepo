@@ -35,6 +35,7 @@ namespace BlockGame
         //loops through the fire pngs after a certain amount of time
         //and resets to 1 when it gets to the end
         totalTime += _dt;
+        flickerTime += _dt;
         if (totalTime > frameTime)
         {
             totalTime = 0.0f;
@@ -47,6 +48,6 @@ namespace BlockGame
 
         //just a sin function to pulse the light
         PointLight *point = &(entity.GetComponent<PointLight>());
-        point->intensity = (sin(totalTime) * 0.5f + minIntensity) * maxIntensity;
+        point->intensity = (sin(flickerTime) * 0.5f + minIntensity) * maxIntensity;
     }
 }
