@@ -34,17 +34,16 @@ namespace BlockGame
     {
         InputManager &input = entity.scene.GetInputManager();
 
-        auto &transform = entity.GetComponent<Canis::Transform>();
+        Transform &transform = entity.GetComponent<Canis::Transform>();
 
         float velocity = m_Speed * _dt;
 
-        glm::vec3 position = transform.position;
+        Canis::Vector3 position = transform.position;
 
-        glm::vec3 forward = glm::vec3(0, 0, -1);
-        glm::vec3 right = glm::vec3(1, 0, 0);
-        glm::vec3 up = glm::vec3(0, 1, 0);
+        Canis::Vector3 forward = Canis::Vector3(0, 0, -1);
+        Canis::Vector3 right = Canis::Vector3(1, 0, 0);
+        Canis::Vector3 up = Canis::Vector3(0, 1, 0);
 
-        // Movement (WASD)
         if (input.GetKey(Key::W))
             position += forward * velocity;
         if (input.GetKey(Key::S))
@@ -61,7 +60,5 @@ namespace BlockGame
 
         transform.position = position;
 
-
-        transform.rotation = glm::vec3(0.0f);
     }
 }

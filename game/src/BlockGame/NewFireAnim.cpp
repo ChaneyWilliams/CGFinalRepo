@@ -48,6 +48,10 @@ namespace BlockGame
 
         //just a sin function to pulse the light
         PointLight *point = &(entity.GetComponent<PointLight>());
-        point->intensity = (sin(flickerTime) * 0.5f + minIntensity) * maxIntensity;
+        point->intensity = (sin(flickerTime * 1.5f) + minIntensity * 1.5f) * maxIntensity;
+        
+        //reseting flickertime so it doesnt go to infinity
+        if(flickerTime > 100.0f)
+            flickerTime = 0.0f;
     }
 }
