@@ -10,7 +10,7 @@ Entities:
     Tag: MainCamera
     Canis::Transform:
       active: true
-      position: [6.7267485, 3.5774198, 14.307618]
+      position: [7, 4, 14]
       rotation: [-0.26179913, -0, 0]
       scale: [1, 0.99999964, 0.99999964]
       parent: 0
@@ -21,6 +21,7 @@ Entities:
       fovDegrees: 60
       nearClip: 0.1
       farClip: 300
+    BlockGame::FlyCam: ~
   - Entity: 910002
     Name: Sun
     Tag: ""
@@ -198,18 +199,8 @@ Entities:
       scale: [1, 1, 1]
       parent: 4810307925033041040
       children:
-        - 3561039526676622598
-        - 12191181170662373724
-        - 17847149066816885579
-        - 3985795652941527296
-        - 13583397551182433461
-        - 2137588448735539414
-        - 15393254687694093772
-        - 9830141220991125515
-        - 1583819191681450770
-        - 16521363063294512599
-        - 9322471485581343279
-        - 6827444002843655188
+        - 6674931358843367913
+        - 10325187187946385613
   - Entity: 171654007356286651
     Name: CobbleBlock
     Tag: ""
@@ -4295,9 +4286,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [13, 0, 5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 8652405799520451084
         - 2608330854182671823
@@ -4548,21 +4539,21 @@ Entities:
       scale: [1, 1, 1]
       parent: 3561039526676622598
       children:
-        - 2025752091716113298
         - 13307196752886948038
         - 13716454355213125030
         - 2103607334232018134
         - 14915776228508897186
         - 3386413693138904181
+        - 1276888550142505392
   - Entity: 2025752091716113298
     Name: GrassBlock
-    Tag: Grass
+    Tag: Dirt
     Canis::Transform:
       active: true
-      position: [0, 0, 0]
+      position: [5, 0, 4]
       rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 8652405799520451084
+      parent: 11592169915701454942
       children:
         []
     Canis::Rigidbody:
@@ -13929,9 +13920,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [-5, 0, 0]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 12489186448551310833
         - 5079478352028630459
@@ -20327,9 +20318,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [13, 0, 0]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 15583549111394788508
         - 13374678733230519678
@@ -21622,9 +21613,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [13, 0, -5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 16135862683563082068
         - 13149231333486068575
@@ -22917,9 +22908,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [-5, 0, -5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 4777838990461879103
         - 10233484807925164255
@@ -24212,9 +24203,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [-5, 0, -10]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 2248674305846994634
         - 6884386056153568480
@@ -25507,9 +25498,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [7, 0, -10]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 7791768578953874342
         - 4748537558809789845
@@ -26802,9 +26793,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [13, 0, -10]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 11518339686203075260
         - 3541604669438578415
@@ -28097,9 +28088,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [1, 0, -10]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 4955473323498073760
         - 3380070240726128913
@@ -29392,9 +29383,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [7, 0, 5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 381289526129728078
         - 1042858645483924519
@@ -30687,9 +30678,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [1, 0, 5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 12958163493927397177
         - 4057028329210935761
@@ -31982,9 +31973,9 @@ Entities:
     Canis::Transform:
       active: true
       position: [-5, 0, 5]
-      rotation: [0, -0, 0]
+      rotation: [0, 0, 0]
       scale: [1, 1, 1]
-      parent: 7271345721150555707
+      parent: 6674931358843367913
       children:
         - 10601363455249955632
         - 5505394207460493822
@@ -41914,3 +41905,1604 @@ Entities:
       color: [1, 1, 1, 1]
       ModelAsset:
         uuid: 17154083321347000101
+  - Entity: 1276888550142505392
+    Name: GrassBlock
+    Tag: Grass
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 8652405799520451084
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 6674931358843367913
+    Name: GrassRing1
+    Tag: ""
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 7271345721150555707
+      children:
+        - 6827444002843655188
+        - 9322471485581343279
+        - 16521363063294512599
+        - 1583819191681450770
+        - 9830141220991125515
+        - 15393254687694093772
+        - 2137588448735539414
+        - 13583397551182433461
+        - 3985795652941527296
+        - 17847149066816885579
+        - 12191181170662373724
+        - 3561039526676622598
+  - Entity: 2478866161517915772
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [8, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 3629217504037023563
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [9, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 11027688273959539406
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [10, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 7169888510699664931
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [11, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 10325187187946385613
+    Name: Dirt
+    Tag: ""
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 7271345721150555707
+      children:
+        - 11592169915701454942
+  - Entity: 3975931701453635531
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 16354686803203001420
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, 3]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 2021539883808911177
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, 2]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 11923616032251893837
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, 1]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 5526057816458985302
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 2464485766232548562
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, -1]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 14413852103106068805
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, -2]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 1781062451660615190
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, -3]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 1590280712947988586
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, -4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 10013654829676424633
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [12, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 13001921700802407853
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [11, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 13042328441115920536
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [10, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 4468903594172875811
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [9, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 12568804957682918422
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [8, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 7409425900452324567
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [7, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 2719026474297528848
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [6, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 15754613765953480941
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [5, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 16052558090293014232
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [4, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 6144376615813530287
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [3, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 7369913510686343722
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [2, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 13456180407258807547
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, -5]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 16348453048247578420
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, -4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 6144588604663756146
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, -3]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 11563579657391370132
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, -2]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 6190454928374793574
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, -1]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 7698074175215638
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 13177577268858303338
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, 1]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 5941919228008824824
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, 2]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 18353342351984795432
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, 3]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 7024058410527977835
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [1, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 3480591932657725911
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [2, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 13068352487191428668
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [3, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 4293372976932572081
+    Name: GrassBlock
+    Tag: Dirt
+    Canis::Transform:
+      active: true
+      position: [4, 0, 4]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 11592169915701454942
+      children:
+        []
+    Canis::Rigidbody:
+      active: true
+      motionType: 0
+      mass: 1
+      friction: 0.2
+      restitution: 0
+      linearDamping: 0.05
+      angularDamping: 0.05
+      useGravity: false
+      isSensor: false
+      layer: 4
+      mask: 4294967295
+      allowSleeping: false
+      lockRotationX: false
+      lockRotationY: false
+      lockRotationZ: false
+      linearVelocity: [0, 0, 0]
+      angularVelocity: [0, 0, 0]
+    Canis::BoxCollider:
+      active: true
+      size: [1, 1, 1]
+    Canis::Material:
+      color: [1, 1, 1, 1]
+      MaterialAsset:
+        uuid: 4172645230642714947
+    Canis::Model:
+      color: [1, 1, 1, 1]
+      ModelAsset:
+        uuid: 17154083321347000101
+  - Entity: 11592169915701454942
+    Name: HouseDirt
+    Tag: ""
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 10325187187946385613
+      children:
+        - 4293372976932572081
+        - 13068352487191428668
+        - 3480591932657725911
+        - 7024058410527977835
+        - 18353342351984795432
+        - 5941919228008824824
+        - 6190454928374793574
+        - 13177577268858303338
+        - 7698074175215638
+        - 11563579657391370132
+        - 6144588604663756146
+        - 16348453048247578420
+        - 13456180407258807547
+        - 7369913510686343722
+        - 6144376615813530287
+        - 16052558090293014232
+        - 15754613765953480941
+        - 2719026474297528848
+        - 7409425900452324567
+        - 12568804957682918422
+        - 4468903594172875811
+        - 13042328441115920536
+        - 13001921700802407853
+        - 10013654829676424633
+        - 1590280712947988586
+        - 1781062451660615190
+        - 14413852103106068805
+        - 2464485766232548562
+        - 5526057816458985302
+        - 11923616032251893837
+        - 2021539883808911177
+        - 16354686803203001420
+        - 3975931701453635531
+        - 2025752091716113298
+        - 2478866161517915772
+        - 3629217504037023563
+        - 11027688273959539406
+        - 7169888510699664931

@@ -121,7 +121,7 @@ void main()
     vec4 albedoTex;
 
     //it just checks the y coord to see which texture to use
-    if (n.y > 0.9)
+    if (nAbs.y > 0.9)
     {
         albedoTex = texture(topTexture, fragmentUV);   // top
     }
