@@ -24234,7 +24234,7 @@ Entities:
     Canis::Transform:
       active: true
       position: [0, 0, 0]
-      rotation: [0, 0, 0]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 2248674305846994634
       children:
@@ -31477,7 +31477,7 @@ Entities:
     Canis::Transform:
       active: true
       position: [0, 0, 0]
-      rotation: [0, 0, 0]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 17060490780122432580
       children:
@@ -31517,7 +31517,7 @@ Entities:
     Canis::Transform:
       active: true
       position: [1, 0, 0]
-      rotation: [0, 0, 0]
+      rotation: [0, -0, 0]
       scale: [1, 1, 1]
       parent: 17060490780122432580
       children:

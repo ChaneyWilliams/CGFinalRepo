@@ -16,6 +16,7 @@ namespace BlockGame
 
         explicit FoliageSpawner(Canis::Entity& _entity) : Canis::ScriptableEntity(_entity) {}
         //basically get all the blocks tagged grass and randomly decide if they get grass, flower, or nothing
+        //The blocks under stuff are tagged Dirt
         Canis::SceneAssetHandle flowerPrefab;
         Canis::SceneAssetHandle grassPrefab;
 

@@ -33,10 +33,8 @@ namespace BlockGame
 
     void FoliageSpawner::Ready()
     {
-        //"where are the collision checks? Won't it just spawn ontop of any Grass Block?"
-        //yes
-        //thats why there are no Grass Blocks underneath anything 
-        //*taps side of head like this is a good idea and smart
+        //Gets all the blocks tagged grass and decides if they something spawns
+        //all the blocks under stuff are tagged Dirt to not spawn flowers inside of blocks
         grassBlocks = entity.scene.GetEntitiesWithTag("Grass");
 
         std::random_device rd;
